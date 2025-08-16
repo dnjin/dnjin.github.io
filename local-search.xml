@@ -8,7 +8,7 @@
     <link href="/2025/08/16/ABC-419-%E6%80%BB%E7%BB%93/"/>
     <url>/2025/08/16/ABC-419-%E6%80%BB%E7%BB%93/</url>
     
-    <content type="html"><![CDATA[<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>踩反作弊了，这个反作弊是碳基生物能想出来的东西吗，谁家好人 <strong>A</strong> 题会用 AI 啊，那我问你，你让海外选手怎么办？这真的科学吗？f**k ATCoder </p><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>小根堆直接秒</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>想了半天，公式终于推出来了：</p><p>$<br>\max((maxr - minr + 1) &#x2F; 2, (maxc - minc + 1) &#x2F; 2)<br>$</p><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>建议 <code>swap(D, C)</code></p><p>差分秒了</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>f**k ATCoder</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>踩反作弊了，这个反作弊是碳基生物能想出来的东西吗，谁家好人 <strong>A</strong> 题会用 AI 啊，那我问你，你让海外选手怎么办？这真的科学吗？f**k ATCoder </p><h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>小根堆直接秒</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>想了半天，公式终于推出来了：</p><p><code>max((maxr - minr + 1) / 2, (maxc - minc + 1) / 2)</code></p><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>建议 <code>swap(D, C)</code></p><p>差分秒了</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>f**k ATCoder</p>]]></content>
     
     
     
