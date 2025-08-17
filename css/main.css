@@ -2239,3 +2239,11 @@ input[type=checkbox] {
     margin-left: 1rem;
   }
 }
+/* 强制 Banner 全屏 */
+.header-inner {
+  height: 100vh !important;
+}
+.banner {
+  height: 100vh !important;
+  min-height: 100vh;
+}
