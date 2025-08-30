@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>ABC 421 总结</title>
+    <link href="/2025/08/30/ABC-421-%E6%80%BB%E7%BB%93/"/>
+    <url>/2025/08/30/ABC-421-%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="我补药开学啊"><a href="#我补药开学啊" class="headerlink" title="我补药开学啊"></a><del>我补药开学啊</del></h1><h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><p>没注意下标问题，罚时+1</p><h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><p>秒了</p><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><p>大坑。</p><p>想了半天，想到一个做法，推了样例 1 2 过了，把代码写出来，然鹅。。。</p><table><thead><tr><th align="center">样例</th><th align="center">#1</th><th align="center">#2</th><th align="center">#3</th></tr></thead><tbody><tr><td align="center"><strong>状态</strong></td><td align="center"><strong>AC</strong></td><td align="center"><strong>AC</strong></td><td align="center"><strong>WA</strong></td></tr></tbody></table><p>没推样例 3 QAQ</p><p>然后就在想，欸？我只要记录一下 AB 不应该出现的位置，然后取个 abs 不就行了？</p><p>然后</p><p><img src="https://pic1.imgdb.cn/item/68b2fa0658cb8da5c864ae86.png"></p><p>A了</p><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><p>被 C 恶搞心态了，看到模拟写不了就没写了</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>思维，码力差</p><p>下周见喵~</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ABC 420 总结</title>
     <link href="/2025/08/24/ABC-420-%E6%80%BB%E7%BB%93/"/>
     <url>/2025/08/24/ABC-420-%E6%80%BB%E7%BB%93/</url>
