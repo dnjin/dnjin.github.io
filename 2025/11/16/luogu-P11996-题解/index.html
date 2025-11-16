@@ -19,21 +19,22 @@
   <meta name="author" content="Cheese_zzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ahttp:&#x2F;&#x2F;mqcoj.cn:5000&#x2F;homework&#x2F;6913c8b05e17fa18cdcb86e1 BC">
+    <meta name="description" content="思路：我们需要计算所有可能的 $a_n \times b_n$ 的值，其中：  $a_n$ 是 $2^n$ 的最高非零位。  $b_n$ 是 $5^n$ 的最高非零位。   观察规律：我们尝试手算寻找规律： $2^n$ 的最高非零位： $2^1 &#x3D; 2$，最高非零位为 $2$。 $2^2 &#x3D; 4$，最高非零位为 $4$。 $2^3 &#x3D; 8$，最高非零位为 $8$。 $">
 <meta property="og:type" content="article">
-<meta property="og:title" content="题目池">
-<meta property="og:url" content="http://example.com/2025/11/15/%E9%A2%98%E7%9B%AE%E6%B1%A0/index.html">
+<meta property="og:title" content="luogu P11996 题解">
+<meta property="og:url" content="http://example.com/2025/11/16/luogu-P11996-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Cheese_zzz&#39;s blog">
-<meta property="og:description" content="Ahttp:&#x2F;&#x2F;mqcoj.cn:5000&#x2F;homework&#x2F;6913c8b05e17fa18cdcb86e1 BC">
+<meta property="og:description" content="思路：我们需要计算所有可能的 $a_n \times b_n$ 的值，其中：  $a_n$ 是 $2^n$ 的最高非零位。  $b_n$ 是 $5^n$ 的最高非零位。   观察规律：我们尝试手算寻找规律： $2^n$ 的最高非零位： $2^1 &#x3D; 2$，最高非零位为 $2$。 $2^2 &#x3D; 4$，最高非零位为 $4$。 $2^3 &#x3D; 8$，最高非零位为 $8$。 $">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-11-15T13:53:00.000Z">
-<meta property="article:modified_time" content="2025-11-15T13:53:39.838Z">
+<meta property="article:published_time" content="2025-11-16T11:26:08.000Z">
+<meta property="article:modified_time" content="2025-11-16T11:28:31.977Z">
 <meta property="article:author" content="Cheese_zzz">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>题目池 - Cheese_zzz&#39;s blog</title>
+  <title>luogu P11996 题解 - Cheese_zzz&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="题目池"></span>
+            <span id="subtitle" data-typed-text="luogu P11996 题解"></span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-11-15 21:53" pubdate>
-          2025年11月15日 晚上
+        <time datetime="2025-11-16 19:26" pubdate>
+          2025年11月16日 晚上
         </time>
       </span>
     
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6 字
+          477 字
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -270,13 +271,122 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">题目池</h1>
+            <h1 id="seo-header">luogu P11996 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p><a target="_blank" rel="noopener" href="http://mqcoj.cn:5000/homework/6913c8b05e17fa18cdcb86e1">http://mqcoj.cn:5000/homework/6913c8b05e17fa18cdcb86e1</a></p>
-<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2>
+                <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>我们需要计算所有可能的 $a_n \times b_n$ 的值，其中：</p>
+<ul>
+<li><p>$a_n$ 是 $2^n$ 的最高非零位。</p>
+</li>
+<li><p>$b_n$ 是 $5^n$ 的最高非零位。</p>
+</li>
+</ul>
+<h3 id="观察规律："><a href="#观察规律：" class="headerlink" title="观察规律："></a>观察规律：</h3><p>我们尝试手算寻找规律：</p>
+<p>$2^n$ 的最高非零位：</p>
+<p>$2^1 &#x3D; 2$，最高非零位为 $2$。</p>
+<p>$2^2 &#x3D; 4$，最高非零位为 $4$。</p>
+<p>$2^3 &#x3D; 8$，最高非零位为 $8$。</p>
+<p>$2^4 &#x3D; 16$，最高非零位为 $1$。</p>
+<p>$2^5 &#x3D; 32$，最高非零位为 $3$。</p>
+<p>$2^6 &#x3D; 64$，最高非零位为 $6$。</p>
+<p>$2^7 &#x3D; 128$，最高非零位为 $1$。</p>
+<p>$2^8 &#x3D; 256$，最高非零位为 $2$。</p>
+<p>$2^9 &#x3D; 512$，最高非零位为 $5$。</p>
+<p>$2^{10} &#x3D; 1024$，最高非零位为 $1$。</p>
+<p>我们发现循环位为：</p>
+<p>$$<br>2\ 4\ 8\ 1\ 3\ 6\ 1\ 2\ 5\ 1<br>$$</p>
+<p>$5^n$ 的最高非零位：</p>
+<p>$5^1 &#x3D; 5$，最高非零位为 $5$。</p>
+<p>$5^2 &#x3D; 25$，最高非零位为 $2$。</p>
+<p>$5^3 &#x3D; 125$，最高非零位为 $1$。</p>
+<p>$5^4 &#x3D; 625$，最高非零位为 $6$。</p>
+<p>$5^5 &#x3D; 3125$，最高非零位为 $3$。</p>
+<p>$5^6 &#x3D; 15625$，最高非零位为 $1$。</p>
+<p>$5^7 &#x3D; 78125$，最高非零位为 $7$。</p>
+<p>$5^8 &#x3D; 390625$，最高非零位为 $3$。</p>
+<p>$5^9 &#x3D; 1953125$，最高非零位为 $1$。</p>
+<p>$5^{10} &#x3D; 9765625$，最高非零位为 $9$。</p>
+<p>我们发现循环位为：</p>
+<p>$$<br>5\ 2\ 1\ 6\ 3\ 1\ 7\ 3\ 1\ 9<br>$$</p>
+<h4 id="我们再计算-a-n-times-b-n-："><a href="#我们再计算-a-n-times-b-n-：" class="headerlink" title="我们再计算 $a_n \times b_n$："></a>我们再计算 $a_n \times b_n$：</h4><table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>$2^n$ 最高位 $a_n$</th>
+<th>$5^n$ 最高位 $b_n$</th>
+<th>$a_n \times b_n$</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$1$</td>
+<td>$2$</td>
+<td>$5$</td>
+<td>$10$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$4$</td>
+<td>$2$</td>
+<td>$8$</td>
+</tr>
+<tr>
+<td>$3$</td>
+<td>$8$</td>
+<td>$1$</td>
+<td>$8$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$1$</td>
+<td>$6$</td>
+<td>$6$</td>
+</tr>
+<tr>
+<td>$5$</td>
+<td>$3$</td>
+<td>$3$</td>
+<td>$9$</td>
+</tr>
+<tr>
+<td>$6$</td>
+<td>$6$</td>
+<td>$1$</td>
+<td>$6$</td>
+</tr>
+<tr>
+<td>$7$</td>
+<td>$1$</td>
+<td>$7$</td>
+<td>$7$</td>
+</tr>
+<tr>
+<td>$8$</td>
+<td>$2$</td>
+<td>$3$</td>
+<td>$6$</td>
+</tr>
+<tr>
+<td>$9$</td>
+<td>$5$</td>
+<td>$1$</td>
+<td>$5$</td>
+</tr>
+<tr>
+<td>$10$</td>
+<td>$1$</td>
+<td>$9$</td>
+<td>$9$</td>
+</tr>
+</tbody></table>
+<p>如果我们继续计算更多项会发现乘积结果在 $1$ 到 $10$ 之间循环出现。</p>
+<h3 id="不同的乘积："><a href="#不同的乘积：" class="headerlink" title="不同的乘积："></a>不同的乘积：</h3><p>通过上面的计算我们发现不同的乘积有：</p>
+<p>$$<br>5\ 6\ 7\ 8\ 9\ 10<br>$$</p>
+<p>总和为：</p>
+<p>$$<br>5 + 6 + 7 + 8 + 9 + 10 &#x3D; 45<br>$$</p>
+<p>最终答案为 $45$。</p>
+<h3 id="Code："><a href="#Code：" class="headerlink" title="Code："></a>Code：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>	cout &lt;&lt; <span class="hljs-number">45</span>;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -284,6 +394,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%A2%98%E8%A7%A3/" class="print-no-link">#题解</a>
+      
+    </div>
   
 </div>
 
@@ -293,8 +410,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>题目池</div>
-      <div>http://example.com/2025/11/15/题目池/</div>
+      <div>luogu P11996 题解</div>
+      <div>http://example.com/2025/11/16/luogu-P11996-题解/</div>
     </div>
     <div class="license-meta">
       
@@ -306,7 +423,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年11月15日</div>
+          <div>2025年11月16日</div>
         </div>
       
       
@@ -338,18 +455,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/11/16/%E6%88%91%E6%B0%B8%E8%BF%9C%E5%96%9C%E6%AC%A2%E7%8F%82%E6%9C%B5%E8%8E%89-luogu-P13983-%E6%95%B0%E5%88%97%E5%88%86%E5%9D%97%E5%85%A5%E9%97%A8-8-%E9%A2%98%E8%A7%A3/" title="我永远喜欢珂朵莉  --- luogu P13983 数列分块入门 8 题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">我永远喜欢珂朵莉  --- luogu P13983 数列分块入门 8 题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/11/02/CSP-2025-%E6%B8%B8%E5%AF%84/" title="CSP 2025 游寄">
-                        <span class="hidden-mobile">CSP 2025 游寄</span>
+                      <a href="/2025/11/16/luogu-P12526-%E9%A2%98%E8%A7%A3/" title="luogu P12526 题解">
+                        <span class="hidden-mobile">luogu P12526 题解</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
