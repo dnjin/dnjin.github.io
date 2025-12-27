@@ -19,22 +19,22 @@
   <meta name="author" content="Cheese_zzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A首先，没啥好说的，答案为 $a \times 12 + b$，也没啥饭堂点。 B其实这题只需要我们用一个集合存储 $b$ 数组，然后在枚举寻找每一个 $a_i,_j$ 在集合 $b$ 中是否存在，答案为最大存在个数。 1234567891011int Max &#x3D; -1e9;   for (int i &#x3D; 1;i &lt;&#x3D; h;i++) &#123;       int cnt &#x3D; 0;">
+    <meta name="description" content="A直接推公式，没有饭堂点。 12345678910#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;#define int long longint d, f;signed main() &#123;    cin &gt;&gt; d &gt;&gt; f;    cout &lt;&lt; (((d - f) &#x2F; 7) * 7 + f) + 7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ABC 437 心得">
-<meta property="og:url" content="http://example.com/2025/12/20/ABC-437-%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:title" content="ABC 438 总结 &amp; 题解">
+<meta property="og:url" content="http://example.com/2025/12/27/ABC-438-%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Cheese_zzz 的小窝">
-<meta property="og:description" content="A首先，没啥好说的，答案为 $a \times 12 + b$，也没啥饭堂点。 B其实这题只需要我们用一个集合存储 $b$ 数组，然后在枚举寻找每一个 $a_i,_j$ 在集合 $b$ 中是否存在，答案为最大存在个数。 1234567891011int Max &#x3D; -1e9;   for (int i &#x3D; 1;i &lt;&#x3D; h;i++) &#123;       int cnt &#x3D; 0;">
+<meta property="og:description" content="A直接推公式，没有饭堂点。 12345678910#include &lt;bits&#x2F;stdc++.h&gt;using namespace std;#define int long longint d, f;signed main() &#123;    cin &gt;&gt; d &gt;&gt; f;    cout &lt;&lt; (((d - f) &#x2F; 7) * 7 + f) + 7">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-12-20T13:54:26.000Z">
-<meta property="article:modified_time" content="2025-12-20T14:06:46.012Z">
+<meta property="article:published_time" content="2025-12-27T13:36:38.000Z">
+<meta property="article:modified_time" content="2025-12-27T13:48:03.623Z">
 <meta property="article:author" content="Cheese_zzz">
-<meta property="article:tag" content="ABC 总结">
+<meta property="article:tag" content="ABC 总结 &amp; 题解">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>ABC 437 心得 - Cheese_zzz 的小窝</title>
+  <title>ABC 438 总结 &amp; 题解 - Cheese_zzz 的小窝</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +204,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ABC 437 心得"></span>
+            <span id="subtitle" data-typed-text="ABC 438 总结 &amp; 题解"></span>
           
         </div>
 
@@ -215,8 +215,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-12-20 21:54" pubdate>
-          2025年12月20日 晚上
+        <time datetime="2025-12-27 21:36" pubdate>
+          2025年12月27日 晚上
         </time>
       </span>
     
@@ -227,7 +227,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          568 字
+          482 字
         
       </span>
     
@@ -275,45 +275,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ABC 437 心得</h1>
+            <h1 id="seo-header">ABC 438 总结 &amp; 题解</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>首先，没啥好说的，答案为 $a \times 12 + b$，也没啥饭堂点。</p>
-<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>其实这题只需要我们用一个集合存储 $b$ 数组，然后在枚举寻找每一个 $a_i,_j$ 在集合 $b$ 中是否存在，答案为最大存在个数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> Max = <span class="hljs-number">-1e9</span>;<br>   <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= h;i++) &#123;<br>       <span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>;<br>       <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>;j &lt;= w;j++) &#123;<br>           <span class="hljs-keyword">if</span> (s.<span class="hljs-built_in">find</span>(a[i][j]) != s.<span class="hljs-built_in">end</span>()) &#123;<br>               cnt++;<br>           &#125;<br>       &#125;<br>       Max = <span class="hljs-built_in">max</span>(Max, cnt);<br>   &#125;<br>   cout &lt;&lt; Max;<br></code></pre></td></tr></table></figure>
+                <h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>直接推公式，没有饭堂点。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">int</span> d, f;<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin &gt;&gt; d &gt;&gt; f;<br>    cout &lt;&lt; (((d - f) / <span class="hljs-number">7</span>) * <span class="hljs-number">7</span> + f) + <span class="hljs-number">7</span> - d;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>这题应该可以看出来是贪心，怎么贪？</p>
-<p>初始：</p>
-<ul>
-<li>$\text{坐雪橇重量} &#x3D; \text{所有} w_i \text{之和}$</li>
-<li>$\text{拉雪橇力量} &#x3D; 0$</li>
-</ul>
-<p>如果 $力量 \geq 重量$，结束</p>
-<p>否则：</p>
-<ul>
-<li>必须把一些驯鹿拉去拉雪橇<ul>
-<li>每次选择 $p_i + w_i$ <strong>最大</strong> 的驯鹿去拉</li>
-<li>因为它对 $力量 − 重量$ 的改善最大</li>
-</ul>
-</li>
-</ul>
-<p>重复直到条件满足</p>
-<p>$剩下坐着的数量 &#x3D; N − 拉雪橇数量$</p>
-<p>排个序就完了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e6</span> + <span class="hljs-number">5</span>;<br><span class="hljs-type">int</span> T;<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span> &#123;<br>    <span class="hljs-type">int</span> w, p;<br>    <span class="hljs-keyword">friend</span> <span class="hljs-type">bool</span> <span class="hljs-built_in">operator</span>&lt;(node a, node b) &#123;<br>        <span class="hljs-keyword">return</span> (a.p + a.w) &gt; (b.p + b.w);<br>    &#125;<br>&#125;a[N];<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin &gt;&gt; T;<br>    <span class="hljs-keyword">for</span> (; T--;) &#123;<br>        <span class="hljs-type">int</span> n, sum = <span class="hljs-number">0</span>, sum1 = <span class="hljs-number">0</span>, now = <span class="hljs-number">0</span>;<br>        cin &gt;&gt; n;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            cin &gt;&gt; a[i].w &gt;&gt; a[i].p;<br>            sum1 += a[i].w;<br>        &#125;<br>        <span class="hljs-built_in">sort</span>(a + <span class="hljs-number">1</span>, a + n + <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (sum &gt;= sum1) <span class="hljs-keyword">break</span>;<br>            sum += a[i].p, sum1 -= a[i].w, now = i;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (sum &gt;= sum1) cout &lt;&lt; n - now &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>        <span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;0\n&quot;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>我们先用一层循环循环枚举所有可能的起始位置，枚举到 $n - m$，其实就是枚举 $s$ 从 $i$ 开始长度为 $m$ 的字串。</p>
+<p>然后再用一层循环比较 $s_{i+j}$ 和 $t_j$，然后计算贡献，贡献公式为：<br>$$<br>(s_{i+j}-t_j+10)\mod 10<br>$$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">int</span> n, m, Min = <span class="hljs-number">1e9</span>;<br>string s, t;<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m &gt;&gt; s &gt;&gt; t;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;i &lt;= n - m;i++) &#123;<br>        <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;j &lt; m;j++) &#123;<br>            now += (((s[i + j] - <span class="hljs-string">&#x27;0&#x27;</span>) - (t[j] - <span class="hljs-string">&#x27;0&#x27;</span>)) + <span class="hljs-number">10</span>) % <span class="hljs-number">10</span>;<br>        &#125;<br>        Min = <span class="hljs-built_in">min</span>(Min, now);<br>    &#125;<br>    cout &lt;&lt; Min;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>饭堂点：没开 <code>long long</code> 被硬控 $10 \ \text{mins}$</p>
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>对于每个 $a_i$，你把 $b$ 分为 $&lt;a_i$ 和 $ &gt;&#x3D; a_i$的两部分，是不是就把绝对值的问题解决了，然后维护一下 $b$ 的前缀和，在二分就完了。</p>
-<p>贡献为：<br>$$<br>(b_k &lt; a_i &lt; b_(k+1))<br>a_i - b_1+ a_i - b_2 … a_i-b_k &#x3D;<br>a_i*k - sum(1, k, b[])<br>$$<br>大于同理。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) &#123;<br>        cin &gt;&gt; a[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= m;i++) &#123;<br>        cin &gt;&gt; b[i];<br>        sum = (sum + b[i]) % mod;<br>    &#125;<br>    <span class="hljs-built_in">sort</span>(b + <span class="hljs-number">1</span>, b + m + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= m;i++) &#123;<br>        s[i] = (s[i - <span class="hljs-number">1</span>] + b[i]) % mod;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) &#123;<br>        <span class="hljs-type">int</span> now = <span class="hljs-built_in">lower_bound</span>(b + <span class="hljs-number">1</span>, b + m + <span class="hljs-number">1</span>, a[i]) - b;<br>        ans = ((ans + (((<span class="hljs-number">2</span> * (now - <span class="hljs-number">1</span>) - m) % mod + mod) % mod * (a[i] % mod) % mod) + ((sum - <span class="hljs-number">2</span> * s[now - <span class="hljs-number">1</span>] % mod + mod) % mod))) % mod;<br>    &#125;<br>    cout &lt;&lt; ans % mod;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>emmm……</p>
+<p>这题我们可以用一个栈来维护当前序列，每个栈内元素为一个二元组 $(val,len)$ 表示这个段的值，这个段的长度，我们把相同连续的段压缩为 $1$ 段，然后兄左到右扫描这个数组，如果栈顶的值和当选值相同，则栈顶元素的 $len+1$，否则说明有新段，搞个新段压入栈，如果每次 $len &gt; 4$ 就删掉 $4$ 个，如果 $len &#x3D; 0$ 则弹栈，然后可能有连锁反应，要接着检查。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e6</span> + <span class="hljs-number">5</span>;<br><span class="hljs-type">int</span> n, a[N];<br><br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span> &#123;<br>    <span class="hljs-type">int</span> v, l;<br>&#125;;<br><br>stack&lt;node&gt;sk;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">asd</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (;!sk.<span class="hljs-built_in">empty</span>() &amp;&amp; sk.<span class="hljs-built_in">top</span>().l &gt;= <span class="hljs-number">4</span>;) &#123;<br>        sk.<span class="hljs-built_in">top</span>().l -= <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">if</span> (sk.<span class="hljs-built_in">top</span>().l == <span class="hljs-number">0</span>) &#123;<br>            node now = sk.<span class="hljs-built_in">top</span>();<br>            sk.<span class="hljs-built_in">pop</span>();<br>            <span class="hljs-keyword">if</span> (!sk.<span class="hljs-built_in">empty</span>() &amp;&amp; sk.<span class="hljs-built_in">top</span>().v == now.v)sk.<span class="hljs-built_in">top</span>().l += now.l;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Printf</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (;!sk.<span class="hljs-built_in">empty</span>();) &#123;<br>        ans += sk.<span class="hljs-built_in">top</span>().l;<br>        sk.<span class="hljs-built_in">pop</span>();<br>    &#125;<br>    cout &lt;&lt; ans;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Scanf</span><span class="hljs-params">()</span> </span>&#123;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) &#123;<br>        cin &gt;&gt; a[i];<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">Scanf</span>();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) &#123;<br>        <span class="hljs-keyword">if</span> (sk.<span class="hljs-built_in">empty</span>() || sk.<span class="hljs-built_in">top</span>().v != a[i]) &#123;<br>            sk.<span class="hljs-built_in">push</span>(&#123; a[i],<span class="hljs-number">1</span> &#125;);<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;<br>            sk.<span class="hljs-built_in">top</span>().l++;<br>        &#125;<br>        <span class="hljs-built_in">asd</span>();<br>    &#125;<span class="hljs-built_in">Printf</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>饭堂点：</p>
-<ol>
-<li>没开 <code>long long</code></li>
-<li>数组开小了</li>
-</ol>
 
                 
               </div>
@@ -326,7 +303,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/ABC-%E6%80%BB%E7%BB%93/" class="print-no-link">#ABC 总结</a>
+        <a href="/tags/ABC-%E6%80%BB%E7%BB%93-%E9%A2%98%E8%A7%A3/" class="print-no-link">#ABC 总结 & 题解</a>
       
     </div>
   
@@ -338,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ABC 437 心得</div>
-      <div>http://example.com/2025/12/20/ABC-437-心得/</div>
+      <div>ABC 438 总结 &amp; 题解</div>
+      <div>http://example.com/2025/12/27/ABC-438-总结/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +328,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年12月20日</div>
+          <div>2025年12月27日</div>
         </div>
       
       
@@ -383,18 +360,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/27/ABC-438-%E6%80%BB%E7%BB%93/" title="ABC 438 总结 &amp; 题解">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ABC 438 总结 &amp; 题解</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/14/ABC-436-%E6%80%BB%E7%BB%93/" title="ABC 436 总结">
-                        <span class="hidden-mobile">ABC 436 总结</span>
+                      <a href="/2025/12/20/ABC-437-%E5%BF%83%E5%BE%97/" title="ABC 437 心得">
+                        <span class="hidden-mobile">ABC 437 心得</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
