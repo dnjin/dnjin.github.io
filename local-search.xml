@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>ABC 440</title>
+    <link href="/2026/01/10/ABC-440/"/>
+    <url>/2026/01/10/ABC-440/</url>
+    
+    <content type="html"><![CDATA[<p>A B 题都不写了</p><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>题目大概是说要在一个 $1$ 到 $n$ 的数组间染色，每次染的代价是 $c_i$，然和可以进行两个操作之一：</p><ul><li>随便选一个 $x$</li><li>对于 $i$，如果 $(i+x)\ \text{mod}\ (2 \times w) &lt; w$  就涂黑。</li></ul><p>然后让你算最小代价。</p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>很显然，操作 $2$ 会给这个数组分段，每段长为 $2 \times w$，然后我们只用将数组分好，在用滑动窗口算最小值就完了。</p><h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>题目大概意思为：</p><p>给你 $n$ 个互不相同的整数，求 $q$ 次询问：每次给定 $x$ 和 $y$，求 $\ge x$ 的整数中，第 $y$ 个不在给定列表里的数是多少。</p><p>用二分二分找 $\ge x$ 的整数中，第 $y$ 个不在给定列表里的数，然后二分的左区间为 $l$，右区间为 $x+y+n$ 因为最坏情况下前面 $n$ 个数都被 $a$ 占掉了，check为：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">if</span> ((mid - x[i] + <span class="hljs-number">1</span>) - ((<span class="hljs-built_in">upper_bound</span>(a + <span class="hljs-number">1</span>, a + n + <span class="hljs-number">1</span>, mid) - a) - (<span class="hljs-built_in">lower_bound</span>(a + <span class="hljs-number">1</span>, a + n + <span class="hljs-number">1</span>, x[i]) - a)) &gt;= y[i])<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ABC 总结 &amp; 题解</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ABC 438 总结 &amp; 题解</title>
     <link href="/2025/12/27/ABC-438-%E6%80%BB%E7%BB%93/"/>
     <url>/2025/12/27/ABC-438-%E6%80%BB%E7%BB%93/</url>
