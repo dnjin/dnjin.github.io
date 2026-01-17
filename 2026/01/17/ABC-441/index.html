@@ -19,22 +19,24 @@
   <meta name="author" content="Cheese_zzz">
   <meta name="keywords" content="">
   
-    <meta name="description" content="A B 题都不写了 C题目大概是说要在一个 $1$ 到 $n$ 的数组间染色，每次染的代价是 $c_i$，然和可以进行两个操作之一：  随便选一个 $x$ 对于 $i$，如果 $(i+x)\ \text{mod}\ (2 \times w) &lt; w$  就涂黑。  然后让你算最小代价。 思路很显然，操作 $2$ 会给这个数组分段，每段长为 $2 \times w$，然后我们只用将数组分好，在">
+    <meta name="description" content="C一个小贪心，按照 $a$ 从大到小的排序，然后直接枚举。 D没看出来，时间不够。 E想的是给这个字符串编号，A 的权值为 $1$，B 的权值为 $-1$，C 的权值为 $0$，然后算一下前缀和之后，问题变为了求：  有多少个区间 $[l,r]$ 满足 $s_r-s_{l-1}&gt;0$  然后呢用一个什么神奇的东西维护一下 $s_i$ 的出现次数就行了。  赛后记：唐了，好像可以用树状数组维护">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ABC 440">
-<meta property="og:url" content="http://example.com/2026/01/10/ABC-440/index.html">
+<meta property="og:title" content="ABC 441">
+<meta property="og:url" content="http://example.com/2026/01/17/ABC-441/index.html">
 <meta property="og:site_name" content="Cheese_zzz 的小窝">
-<meta property="og:description" content="A B 题都不写了 C题目大概是说要在一个 $1$ 到 $n$ 的数组间染色，每次染的代价是 $c_i$，然和可以进行两个操作之一：  随便选一个 $x$ 对于 $i$，如果 $(i+x)\ \text{mod}\ (2 \times w) &lt; w$  就涂黑。  然后让你算最小代价。 思路很显然，操作 $2$ 会给这个数组分段，每段长为 $2 \times w$，然后我们只用将数组分好，在">
+<meta property="og:description" content="C一个小贪心，按照 $a$ 从大到小的排序，然后直接枚举。 D没看出来，时间不够。 E想的是给这个字符串编号，A 的权值为 $1$，B 的权值为 $-1$，C 的权值为 $0$，然后算一下前缀和之后，问题变为了求：  有多少个区间 $[l,r]$ 满足 $s_r-s_{l-1}&gt;0$  然后呢用一个什么神奇的东西维护一下 $s_i$ 的出现次数就行了。  赛后记：唐了，好像可以用树状数组维护">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-01-10T13:44:35.000Z">
-<meta property="article:modified_time" content="2026-01-10T13:59:02.828Z">
+<meta property="og:image" content="https://komarev.com/ghpvc/?username=airaaa&color=blueviolet">
+<meta property="article:published_time" content="2026-01-17T13:44:51.000Z">
+<meta property="article:modified_time" content="2026-01-17T13:50:17.901Z">
 <meta property="article:author" content="Cheese_zzz">
-<meta property="article:tag" content="ABC 总结 &amp; 题解">
+<meta property="article:tag" content="ABC">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://komarev.com/ghpvc/?username=airaaa&color=blueviolet">
   
   
   
-  <title>ABC 440 - Cheese_zzz 的小窝</title>
+  <title>ABC 441 - Cheese_zzz 的小窝</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ABC 440"></span>
+            <span id="subtitle" data-typed-text="ABC 441"></span>
           
         </div>
 
@@ -215,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-01-10 21:44" pubdate>
-          2026年1月10日 晚上
+        <time datetime="2026-01-17 21:44" pubdate>
+          2026年1月17日 晚上
         </time>
       </span>
     
@@ -227,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          259 字
+          140 字
         
       </span>
     
@@ -238,7 +240,7 @@
         
         
         
-          3 分钟
+          2 分钟
         
       </span>
     
@@ -275,26 +277,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ABC 440</h1>
+            <h1 id="seo-header">ABC 441</h1>
             
             
               <div class="markdown-body">
                 
-                <p>A B 题都不写了</p>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>题目大概是说要在一个 $1$ 到 $n$ 的数组间染色，每次染的代价是 $c_i$，然和可以进行两个操作之一：</p>
-<ul>
-<li>随便选一个 $x$</li>
-<li>对于 $i$，如果 $(i+x)\ \text{mod}\ (2 \times w) &lt; w$  就涂黑。</li>
-</ul>
-<p>然后让你算最小代价。</p>
-<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>很显然，操作 $2$ 会给这个数组分段，每段长为 $2 \times w$，然后我们只用将数组分好，在用滑动窗口算最小值就完了。</p>
-<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>题目大概意思为：</p>
-<p>给你 $n$ 个互不相同的整数，求 $q$ 次询问：每次给定 $x$ 和 $y$，求 $\ge x$ 的整数中，第 $y$ 个不在给定列表里的数是多少。</p>
-<p>用二分二分找 $\ge x$ 的整数中，第 $y$ 个不在给定列表里的数，然后二分的左区间为 $l$，右区间为 $x+y+n$ 因为最坏情况下前面 $n$ 个数都被 $a$ 占掉了，check为：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">if</span> ((mid - x[i] + <span class="hljs-number">1</span>) - ((<span class="hljs-built_in">upper_bound</span>(a + <span class="hljs-number">1</span>, a + n + <span class="hljs-number">1</span>, mid) - a) - (<span class="hljs-built_in">lower_bound</span>(a + <span class="hljs-number">1</span>, a + n + <span class="hljs-number">1</span>, x[i]) - a)) &gt;= y[i])<br></code></pre></td></tr></table></figure>
-
-
-
+                <h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>一个小贪心，按照 $a$ 从大到小的排序，然后直接枚举。</p>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>没看出来，时间不够。</p>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>想的是给这个字符串编号，<code>A</code> 的权值为 $1$，<code>B</code> 的权值为 $-1$，<code>C</code> 的权值为 $0$，然后算一下前缀和之后，问题变为了求：</p>
+<blockquote>
+<p>有多少个区间 $[l,r]$ 满足 $s_r-s_{l-1}&gt;0$</p>
+</blockquote>
+<p>然后呢用一个什么神奇的东西维护一下 $s_i$ 的出现次数就行了。</p>
+<blockquote>
+<p>赛后记：唐了，好像可以用树状数组维护</p>
+</blockquote>
+<p>然后就完了</p>
+<p><img src="https://komarev.com/ghpvc/?username=airaaa&color=blueviolet" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -307,7 +306,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/ABC-%E6%80%BB%E7%BB%93-%E9%A2%98%E8%A7%A3/" class="print-no-link">#ABC 总结 & 题解</a>
+        <a href="/tags/ABC/" class="print-no-link">#ABC</a>
       
     </div>
   
@@ -319,8 +318,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ABC 440</div>
-      <div>http://example.com/2026/01/10/ABC-440/</div>
+      <div>ABC 441</div>
+      <div>http://example.com/2026/01/17/ABC-441/</div>
     </div>
     <div class="license-meta">
       
@@ -332,7 +331,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年1月10日</div>
+          <div>2026年1月17日</div>
         </div>
       
       
@@ -364,18 +363,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/01/17/ABC-441/" title="ABC 441">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ABC 441</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/27/ABC-438-%E6%80%BB%E7%BB%93/" title="ABC 438 总结 &amp; 题解">
-                        <span class="hidden-mobile">ABC 438 总结 &amp; 题解</span>
+                      <a href="/2026/01/10/ABC-440/" title="ABC 440">
+                        <span class="hidden-mobile">ABC 440</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
