@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>ABC 444</title>
+    <link href="/2026/02/07/ABC-444/"/>
+    <url>/2026/02/07/ABC-444/</url>
+    
+    <content type="html"><![CDATA[<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>这题的大概意思是 $b_i$ 为 $a_i$ 个 $1$，然后让你求 $\sum^{n}_{i&#x3D;1} b_i$。</p><p>然后关键点就是</p><p>对于 $b_i$ , 在不进位的前提下是多少与什么有关？</p><p>是不是 $a$ 中大于等于 $i$ 的数的数量，然后模拟就完了</p><h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>这题其实很简单，用滑动窗口，枚举 $r$，再向右移动的过程中，每次尝试加入一个 $a_r$，如何加入 $a_r$ 后，有一个数与 $a_r$ 的差值小于 $d$，那么就一直移动 $l$，直到没有冲突。</p><p>然后怎么 check 有没有冲突呢？只用一个 <code>set</code>，二分一下<strong>第一个大于等于 $x - d + 1$ 的数</strong>，如果找不到，或者找到的那个数已经 $\ge x + d$ 了，说明没有冲突，要不然就是有了。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N = <span class="hljs-number">1e6</span> + <span class="hljs-number">5</span>;<br><span class="hljs-type">int</span> n, d, l = <span class="hljs-number">1</span>, ans, a[N];<br>set&lt;<span class="hljs-type">int</span>&gt;s;<br><br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin &gt;&gt; n &gt;&gt; d;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i &lt;= n;i++) &#123;<br>        cin &gt;&gt; a[i];<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> r = <span class="hljs-number">1</span>;r &lt;= n;r++) &#123;<br>        <span class="hljs-type">int</span> now = a[r];<br>        <span class="hljs-keyword">for</span> (;;) &#123;<br>            <span class="hljs-keyword">auto</span> it = s.<span class="hljs-built_in">lower_bound</span>(now - d + <span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">if</span> (it != s.<span class="hljs-built_in">end</span>() &amp;&amp; *it &lt; a[r] + d) &#123; s.<span class="hljs-built_in">erase</span>(s.<span class="hljs-built_in">find</span>(a[l]));l++; &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>        s.<span class="hljs-built_in">insert</span>(a[r]);<br>        ans += r - l + <span class="hljs-number">1</span>;<br>    &#125;<br>    cout &lt;&lt; ans &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>本场笑点：</p><p>我先把 E A了才去看的 D，差点崩了。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ABC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ABC 442</title>
     <link href="/2026/01/24/ABC-442/"/>
     <url>/2026/01/24/ABC-442/</url>
